@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Core Colors derived from Logo */
+  --brand-blue: #2f60b3;
+  --brand-orange: #f15a24;
+  --brand-dark: #333333;
+
+  /* Typography & Layout Essentials */
+  --text: #4a5568;             /* Slate text for easy reading */
+  --text-h: #1a202c;           /* Crisp dark headings */
+  --bg: #ffffff;
+  --border: #e2e8f0;
+  --code-bg: #f8fafc;
+  
+  /* Primary Accent (Industrial Blue) */
+  --accent: var(--brand-blue);
+  --accent-bg: rgba(47, 96, 179, 0.08);
+  --accent-border: rgba(47, 96, 179, 0.4);
+
+  /* Secondary CTA Accent (Energy Orange) */
+  --accent-cta: var(--brand-orange);
+  --accent-cta-hover: #d94b18;
+  --accent-cta-bg: rgba(241, 90, 36, 0.1);
+
+  /* Surface / Card Elements */
+  --card-bg: #f8fafc;
+  --social-bg: rgba(226, 232, 240, 0.6);
+  --shadow: rgba(15, 23, 42, 0.08) 0 10px 15px -3px, rgba(15, 23, 42, 0.04) 0 4px 6px -2px;
+
+  /* Typography Settings */
+  --sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --heading: 'Inter', system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Adjusted text & surfaces for dark background */
+    --text: #94a3b8;
+    --text-h: #f8fafc;
+    --bg: #0f172a;            /* Rich deep navy tint */
+    --border: #1e293b;
+    --code-bg: #1e293b;
+    
+    /* Vibrant Accent Adjustments for Dark Mode */
+    --accent: #4c82e6;        /* Brightened blue for readability */
+    --accent-bg: rgba(76, 130, 230, 0.15);
+    --accent-border: rgba(76, 130, 230, 0.5);
+
+    --accent-cta: #ff6b35;    /* Slightly lighter orange */
+    --accent-cta-hover: #f15a24;
+    --accent-cta-bg: rgba(255, 107, 53, 0.18);
+
+    --card-bg: #1e293b;
+    --social-bg: rgba(30, 41, 59, 0.7);
+    --shadow: rgba(0, 0, 0, 0.5) 0 10px 15px -3px, rgba(0, 0, 0, 0.3) 0 4px 6px -2px;
+  }
+}
