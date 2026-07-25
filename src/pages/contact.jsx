@@ -25,38 +25,38 @@ export default function Contact() {
 
   // Form Submission via EmailJS
   const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSending(true);
-    setSuccessMessage('');
+  e.preventDefault();
+  setIsSending(true);
+  setSuccessMessage('');
 
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      phone_number: formData.phone,
-      subject: formData.subject,
-      message: formData.message
-    };
-
-    emailjs
-      .send(
-        'service_7o8sybf',
-        'template_z2899cy',
-        templateParams,
-        '_dHqvekCWVUt33qjB'
-      )
-      .then(
-        () => {
-          setSuccessMessage('Message sent successfully!');
-          setFormData({ name: '', email: '', phone: '', subject: 'General Inquiry', message: '' });
-          setIsSending(false);
-        },
-        (error) => {
-          console.error(error);
-          setIsSending(false);
-          alert('Failed to send message. Please try again later.');
-        }
-      );
+  const templateParams = {
+    from_name: formData.name,
+    from_email: formData.email,
+    phone_number: formData.phone,
+    subject: formData.subject,
+    message: formData.message
   };
+
+  emailjs
+    .send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(
+      () => {
+        setSuccessMessage('Message sent successfully!');
+        setFormData({ name: '', email: '', phone: '', subject: 'General Inquiry', message: '' });
+        setIsSending(false);
+      },
+      (error) => {
+        console.error('EmailJS Error:', error);
+        setIsSending(false);
+        alert('Failed to send message. Please try again later.');
+      }
+    );
+};
 
   return (
     <>
