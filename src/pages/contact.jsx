@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import CTABanner from "../components/home/cta"; 
 import { Phone, Envelope, MapIcon } from '@boxicons/react';
@@ -61,36 +61,37 @@ export default function Contact() {
   return (
     <>
       {/* 1. Hero Section */}
-      <section className="relative text-white py-24 px-6 overflow-hidden">
+      <section className="relative overflow-hidden bg-white px-6 py-16 md:py-20">
   {/* 1. Main Background Image Container */}
   <div className="absolute inset-0 z-0">
     <img 
       src={hero_bg} // Replace with your imported image variable (e.g., hero_bg, BG, etc.)
       alt="Background Texture"
       className="w-full h-full object-cover object-center"
+      decoding="async"
     />
   </div>
 
-  {/* 2. Dark Overlay Layer for Text Readability */}
-  <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[2px] z-0" />
+  {/* 2. Light overlay for text readability */}
+  <div className="absolute inset-0 z-0 bg-white/90" />
 
   {/* 3. Main Content Wrapper */}
   <div className="max-w-7xl mx-auto relative z-10 text-left">
     <span className="text-orange-500 font-semibold tracking-wider uppercase text-sm block mb-3">
       Connect With Us
     </span>
-    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 max-w-4xl">
+    <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-950 mb-6 max-w-4xl">
       Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">Reliable Together</span>
     </h1>
-    <p className="text-slate-300 text-lg max-w-2xl leading-relaxed">
-      Have questions about our operational capabilities, pricing structures, or scaling pipelines across India? Reach out to our team today.
+    <p className="text-slate-600 text-lg max-w-2xl leading-relaxed">
+      Have questions about our capabilities, pricing, or a specific electronics support requirement? Reach out to our team today.
     </p>
   </div>
 </section>
 
 
       {/* 2. Contact Cards Section */}
-      <section className="py-12 bg-slate-50 px-6 -mt-8 relative z-20">
+      <section className="relative z-20 bg-slate-50 px-6 py-10 md:py-12">
         <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Card 1 - Call */}
           <div className="bg-white p-6 rounded-xl shadow-md border border-slate-100 flex items-start gap-4 hover:border-blue-500 transition-colors">
@@ -131,7 +132,7 @@ export default function Contact() {
       </section>
 
       {/* 3. Contact Form & Office Information Split Grid */}
-      <section className="py-16 bg-white px-6">
+      <section className="bg-white px-6 py-12 md:py-16">
         <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-start">
           
           {/* Contact Form Component (7 Cols) */}
@@ -161,7 +162,8 @@ export default function Contact() {
                   <select name="subject" value={formData.subject} onChange={handleChange} className="w-full bg-white border border-slate-300 rounded-lg px-4 py-2 text-slate-900 text-sm focus:outline-none focus:border-blue-600">
                     <option value="Bulk Packaging">Bulk Packaging Solutions</option>
                     <option value="Returns Management">Returns & Reverse Logistics</option>
-                    <option value="EMS Services">EMS / OEM Assembly Pipeline</option>
+                    <option value="EMS Services">Electronics Manufacturing Services</option>
+                    <option value="ESD Solutions">ESD Solutions</option>
                     <option value="General Inquiry">General Partnership Queries</option>
                   </select>
                 </div>
@@ -211,8 +213,8 @@ export default function Contact() {
               <div className="flex items-start gap-3">
                 <span className="text-orange-500 text-lg mt-0.5"><i className="bx bx-check-shield"></i></span>
                 <p>
-                  <strong>Compliance Assurance:</strong><br />
-                  Fully certified facility for bulk diagnostics, secondary fulfillment operations, and environmentally safe electronics asset recovery.
+                  <strong>Process Assurance:</strong><br />
+                  Structured processes, careful product handling, and quality-focused execution tailored to each client's operational requirements.
                 </p>
               </div>
             </div>
@@ -224,9 +226,9 @@ export default function Contact() {
       {/* 4. Google Map Component */}
       <section id="map" className="w-full h-[400px] bg-slate-200 relative">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.8688277232213!2d77.03128237549751!3d28.54366217571346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1a420ec1a99b%3A0x32cc86fd251a4fce!2sCN-14%2C%20Bamnoli%20Village%2C%20Sector%2028%20Dwarka%2C%20Dwarka%2C%20New%20Delhi%2C%20Delhi%2C%20110077!5e0!3m2!1sen!2sin!4v1784226104947!5m2!1sen!2sin" 
-          className="w-full h-full border-0" 
-          allowFullScreen="" 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d219.05401530725425!2d77.03087071838647!3d28.54381731295356!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1a69a1e778a3%3A0xcf56cfb7671b4e0d!2sG2VJ%2BF8X%2C%20village%2C%20mother%20dairy%20road%2C%20Bamnoli%2C%20Sector%2028%20Dwarka%2C%20Dwarka%2C%20New%20Delhi%2C%20Delhi%2C%20110077!5e0!3m2!1sen!2sin!4v1785158018495!5m2!1sen!2sin"
+          className="h-full w-full border-0"
+          allowFullScreen
           loading="lazy" 
           referrerPolicy="strict-origin-when-cross-origin"
           title="NGPS Multitech Plant Office Location Map"
@@ -234,7 +236,7 @@ export default function Contact() {
       </section>
 
       {/* 5. FAQs Component */}
-      <section className="py-20 bg-slate-50 text-slate-900 px-6">
+      <section className="bg-slate-50 px-6 py-12 text-slate-900 md:py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-slate-950">Contact Coordination FAQs</h2>
@@ -245,14 +247,35 @@ export default function Contact() {
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
               <h4 className="font-semibold text-base mb-2 text-blue-600">How fast can I get a custom onboarding quote?</h4>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Once we receive your technical payload parameters through the form above, our logistics analytics crew estimates pricing points and routes back to you with a comprehensive quote outline in less than one working day.
+                After receiving your product, service, volume, quality, and timeline requirements, our team reviews the scope and follows up with any questions needed to prepare an appropriate quote.
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-              <h4 className="font-semibold text-base mb-2 text-blue-600">Can we schedule a live on-site visit to the New Delhi plant facility?</h4>
+              <h4 className="font-semibold text-base mb-2 text-blue-600">Can we request a visit to the New Delhi facility?</h4>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Absolutely. We value structural transparency. Please connect ahead of schedule through our corporate lines to set an inspection date with operations personnel.
+                Please contact our team in advance with your company details and purpose of visit. We can then discuss availability and coordinate an appropriate time with the operations team.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <h4 className="font-semibold text-base mb-2 text-blue-600">What information should I provide for an accurate quote?</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Include the required service, product category, estimated quantity or volume, product-handling requirements, quality expectations, preferred timeline, and any relevant pickup or delivery details.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <h4 className="font-semibold text-base mb-2 text-blue-600">Should I use the Contact form or Request a Quote page?</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Use Request a Quote when you have a defined service requirement or project scope. The Contact form is better for general questions, partnership discussions, facility coordination, or when you are unsure which service fits your needs.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+              <h4 className="font-semibold text-base mb-2 text-blue-600">Can we discuss a customized process before submitting final requirements?</h4>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Yes. NGPS works closely with clients to understand their operational challenges. You can share an initial requirement first, and our team can discuss practical workflow options before the final scope is confirmed.
               </p>
             </div>
           </div>

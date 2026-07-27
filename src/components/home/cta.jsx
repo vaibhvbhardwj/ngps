@@ -1,7 +1,9 @@
 
+import { Link } from 'react-router-dom';
+
 export default function CTABanner() {
   return (
-    <section className="bg-white py-12 px-6 sm:px-8">
+    <section className="bg-white px-6 py-10 sm:px-8 md:py-12">
       {/* Container is styled purely in crisp white with an intentional, premium inner-border frame */}
       <div className="max-w-7xl mx-auto bg-white border-2 border-[#2f60b3]/20 text-[#333333] rounded-2xl p-8 sm:p-12 shadow-sm relative overflow-hidden">
         
@@ -13,16 +15,16 @@ export default function CTABanner() {
             Ready to Optimize Your <span className="text-[var(--brand-orange)]"> After-Sales Infrastructure? </span>
           </h2>
           <p className="mt-3 text-slate-600 text-sm max-w-xl">
-            Let's coordinate an exact service roadmap blueprint for your electronic hardware units. Connect with our logistics operations hub in New Delhi today.
+            Let's coordinate a practical service plan for your electronic products. Connect with our operations team to discuss your requirements today.
           </p>
           
           <div className="mt-8 flex flex-wrap gap-6 items-center">
-            <a 
-              href="mailto:info@ngpsmultitech.com"
+            <Link
+              to="/quote"
               className="px-6 py-3 rounded-lg bg-[#f15a24] hover:bg-[#d94b18] text-white font-medium transition-colors text-sm shadow-md inline-flex items-center gap-2"
             >
-              <i className='bx bx-envelope text-lg'></i> Contact Operations
-            </a>
+              Request a Quote
+            </Link>
             <div className="text-sm text-slate-500 flex items-center gap-2">
               <i className='bx bx-phone text-[#2f60b3] text-lg'></i>
               Direct Line: <span className="text-[#333333] font-semibold">+91 9818867565</span>

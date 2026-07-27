@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import footerBg from "../../assets/background-banner.png"; // <-- your warehouse image
+import footerBg from "../../assets/background-banner.jpg"; // Compressed warehouse image
 
 import {
   Phone,
@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="absolute inset-0 bg-[rgba(8,18,35,0.86)]"></div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto max-w-7xl px-6 py-20">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 py-12 md:py-16">
 
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
 
@@ -40,7 +40,7 @@ export default function Footer() {
 
             <p className="mt-6 leading-8 text-slate-300">
               Delivering reliable Packaging,
-              EMS Assembly, OEM Manufacturing
+              EMS, ESD Solutions
               and Returns Management solutions
               with quality, precision and timely execution.
             </p>
@@ -103,6 +103,13 @@ export default function Footer() {
                 Contact
               </Link>
 
+              <Link
+                to="/quote"
+                className="text-slate-300 transition-all duration-300 hover:translate-x-1 hover:text-[var(--brand-orange)]"
+              >
+                Request a Quote
+              </Link>
+
             </div>
 
           </div>
@@ -117,13 +124,33 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4 text-slate-300">
 
-              <p>Packaging</p>
+              <Link
+                to="/service#packaging"
+                className="transition-all duration-300 hover:translate-x-1 hover:text-[var(--brand-orange)]"
+              >
+                Packaging
+              </Link>
 
-              <p>Returns Management</p>
+              <Link
+                to="/service#returns"
+                className="transition-all duration-300 hover:translate-x-1 hover:text-[var(--brand-orange)]"
+              >
+                Returns Management
+              </Link>
 
-              <p>EMS Assembly</p>
+              <Link
+                to="/service#ems"
+                className="transition-all duration-300 hover:translate-x-1 hover:text-[var(--brand-orange)]"
+              >
+                EMS Services
+              </Link>
 
-              <p>OEM Manufacturing</p>
+              <Link
+                to="/service#esd"
+                className="transition-all duration-300 hover:translate-x-1 hover:text-[var(--brand-orange)]"
+              >
+                ESD Solutions
+              </Link>
 
             </div>
 
@@ -249,11 +276,11 @@ export default function Footer() {
 
           <span>•</span>
 
-          <span>EMS & OEM Solutions</span>
+          <span>EMS & ESD Solutions</span>
 
           <span>•</span>
 
-          <span>Since 2026</span>
+          <span>Value-Added Services</span>
 
         </div>
 

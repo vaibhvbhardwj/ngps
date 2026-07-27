@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X, Phone, RightIndent } from '@boxicons/react';  // RightIndent needs to be changed
+import { Menu, X, Phone } from '@boxicons/react';
 import logo from '../../assets/logo.png'; 
 
 export default function Navbar() {
@@ -10,6 +10,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/service' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Quote', path: '/quote'},
   ];
 
   const closeMenu = () => setIsOpen(false);
@@ -88,14 +89,9 @@ export default function Navbar() {
 
             {/* Need to create a proper form for cta */}
             {/* CTA */}  
-            <button className='group flex items-center gap-2 rounded-xl bg-[var(--brand-orange)] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--accent-cta-hover)] hover:shadow-lg'>
+            <Link to='/quote' className='group flex items-center gap-2 rounded-xl bg-[var(--brand-orange)] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--accent-cta-hover)] hover:shadow-lg'>
               Request Quote
-
-              <RightIndent
-                size='20px'
-                className='transition-transform duration-300 group-hover:translate-x-1'
-              />
-            </button>
+            </Link>
 
           </div>
 
@@ -194,14 +190,9 @@ export default function Navbar() {
             </div>
             </a>
 
-            <button className='group mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--brand-orange)] py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[var(--accent-cta-hover)]'>
+            <Link to='/quote' onClick={closeMenu} className='group mt-6 flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--brand-orange)] py-3.5 text-sm font-semibold text-white shadow-md transition-all duration-300 hover:bg-[var(--accent-cta-hover)]'>
               Request Quote
-
-              <RightIndent
-                size='20px'
-                className='transition-transform duration-300 group-hover:translate-x-1'
-              />
-            </button>
+            </Link>
 
           </div>
         </aside>

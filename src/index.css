@@ -35,7 +35,7 @@
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
-  color-scheme: light dark;
+  color-scheme: light;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -45,29 +45,5 @@
 
   @media (max-width: 1024px) {
     font-size: 16px;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Adjusted text & surfaces for dark background */
-    --text: #94a3b8;
-    --text-h: #f8fafc;
-    --bg: #0f172a;            /* Rich deep navy tint */
-    --border: #1e293b;
-    --code-bg: #1e293b;
-    
-    /* Vibrant Accent Adjustments for Dark Mode */
-    --accent: #4c82e6;        /* Brightened blue for readability */
-    --accent-bg: rgba(76, 130, 230, 0.15);
-    --accent-border: rgba(76, 130, 230, 0.5);
-
-    --accent-cta: #ff6b35;    /* Slightly lighter orange */
-    --accent-cta-hover: #f15a24;
-    --accent-cta-bg: rgba(255, 107, 53, 0.18);
-
-    --card-bg: #1e293b;
-    --social-bg: rgba(30, 41, 59, 0.7);
-    --shadow: rgba(0, 0, 0, 0.5) 0 10px 15px -3px, rgba(0, 0, 0, 0.3) 0 4px 6px -2px;
   }
 }

@@ -1,9 +1,11 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
     Shield,
-    Leaf
+    Leaf,
+    X
 }  from '@boxicons/react'; 
 
 import QMSCert from '../../assets/qms_cert.png';
@@ -30,33 +32,30 @@ const certificateData = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.25,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
 export default function Certifications() {
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  useEffect(() => {
+    if (!selectedCertificate) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedCertificate(null);
+      }
+    };
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', closeOnEscape);
+    };
+  }, [selectedCertificate]);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-24">
+    <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50 to-white py-12 md:py-16">
 
       {/* Background Blur */}
       <div className="absolute -left-20 top-0 h-72 w-72 rounded-full bg-[var(--accent-bg)] blur-3xl" />
@@ -68,7 +67,7 @@ export default function Certifications() {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.7 }}
           className="w-full text-left mb-16"
         >
@@ -96,13 +95,20 @@ export default function Certifications() {
               <div className="flex flex-col items-center gap-6 rounded-[30px] border border-slate-200 bg-white p-6 shadow-xl lg:p-10">
                 {/* Certificate Image */}
                 <div className="w-full max-w-[270px]">
-                  <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedCertificate(certificateData[0])}
+                    className="block w-full cursor-zoom-in overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20"
+                    aria-label="Open ISO Quality Management certificate"
+                  >
                     <img
                       src={certificateData[0].image}
                       alt="ISO Quality Certificate"
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover"
                     />
-                  </div>
+                  </button>
                 </div>
 
                 {/* Text Content */}
@@ -138,13 +144,20 @@ export default function Certifications() {
               <div className="flex flex-col items-center gap-6 rounded-[30px] border border-slate-200 bg-white p-6 shadow-xl lg:p-10">
                 {/* Certificate Image */}
                 <div className="w-full max-w-[270px]">
-                  <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedCertificate(certificateData[1])}
+                    className="block w-full cursor-zoom-in overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-500/20"
+                    aria-label="Open ISO Environment Management certificate"
+                  >
                     <img
                       src={certificateData[1].image}
                       alt="ISO Environment Certificate"
+                      loading="lazy"
+                      decoding="async"
                       className="h-full w-full object-cover"
                     />
-                  </div>
+                  </button>
                 </div>
 
                 {/* Text Content */}
@@ -176,6 +189,37 @@ export default function Certifications() {
 
         </div>
       </div>
+
+      {selectedCertificate && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-white/95 p-4 backdrop-blur-md sm:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${selectedCertificate.title} certificate preview`}
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) {
+              setSelectedCertificate(null);
+            }
+          }}
+        >
+          <div className="relative flex max-h-full max-w-4xl items-center justify-center rounded-2xl border border-slate-200 bg-white p-3 shadow-2xl sm:p-5">
+            <button
+              type="button"
+              onClick={() => setSelectedCertificate(null)}
+              className="absolute right-2 top-2 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-md transition hover:scale-105 hover:border-orange-300 hover:text-orange-500 focus:outline-none focus:ring-4 focus:ring-blue-500/20 sm:-right-5 sm:-top-5"
+              aria-label="Close certificate preview"
+            >
+              <X size="26px" />
+            </button>
+
+            <img
+              src={selectedCertificate.image}
+              alt={`${selectedCertificate.title} certificate`}
+              className="max-h-[calc(100vh-4rem)] max-w-full rounded-xl object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

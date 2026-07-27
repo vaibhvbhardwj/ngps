@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 // Import the React components directly from the V2 bundle package
-import { Layers, Globe, Shield, ArrowRightSquare } from '@boxicons/react';
+import { Layers, Globe, Shield } from '@boxicons/react';
+import shortLogo from '../../assets/logo_short.png';
 
 const pillars = [
   {
@@ -9,8 +10,8 @@ const pillars = [
     IconComponent: Layers,
   },
   {
-    title: "Pan-India Logistics",
-    desc: "Strategically operating from New Delhi with nationwide coordination for efficient packaging, dispatch, and after-sales support.",
+    title: "Flexible Solutions",
+    desc: "Services are shaped around each client's product, volume, quality, and operational requirements rather than a one-size-fits-all approach.",
     IconComponent: Globe,
   },
   {
@@ -39,37 +40,53 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-24">
+    <section className="relative overflow-hidden bg-white py-12 md:py-16">
       {/* Decorative Background */}
       <div className="absolute -left-32 top-0 h-80 w-80 rounded-full bg-[var(--accent-bg)] blur-3xl"></div>
       <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-[rgba(241,90,36,.08)] blur-3xl"></div>
 
       <div className="mx-auto max-w-7xl px-6 sm:px-8">
         
-        {/* Heading Container */}
-        <motion.div 
-          className="max-w-3xl"
-          initial={{ opacity: 0, x: -60 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <span className="block text-sm font-semibold tracking-wide text-[var(--brand-orange)]">
-            WHY NGPS MULTITECH
-          </span>
+        <div className="lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(220px,1fr)] lg:items-center lg:gap-12">
+          {/* Heading Container */}
+          <motion.div
+            className="max-w-3xl"
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, margin: "-100px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <span className="block text-sm font-semibold tracking-wide text-[var(--brand-orange)]">
+              WHY NGPS MULTITECH
+            </span>
 
 
-          <h2 className="mt-6 text-4xl font-bold leading-tight text-black md:text-5xl">
-            Support That Builds
-            <span className="text-[var(--brand-orange)]"> Trust.</span>
-          </h2>
+            <h2 className="mt-6 text-4xl font-bold leading-tight text-black md:text-5xl">
+              Support That Builds
+              <span className="text-[var(--brand-orange)]"> Trust.</span>
+            </h2>
 
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text)]">
-            From bulk packaging and electronics after-sales support to returns
-            management and OEM services, we become an extension of your
-            operations—helping you deliver consistent quality at every stage.
-          </p>
-        </motion.div>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text)]">
+              At NGPS Multitech Private Limited, we believe that strong business partnerships are built through consistent quality, reliable execution, and responsive support. Our solutions are designed around the actual operational requirements of our clients rather than a one-size-fits-all approach.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 40, scale: 0.92 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: false, amount: 0.4 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="hidden items-center justify-center lg:flex"
+          >
+            <img
+              src={shortLogo}
+              alt="NGPS"
+              loading="lazy"
+              decoding="async"
+              className="h-auto w-full max-w-[245px] object-contain"
+            />
+          </motion.div>
+        </div>
 
         {/* Staggered Cards Container */}
         <motion.div 
@@ -77,7 +94,7 @@ export default function WhyChooseUs() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: false, margin: "-50px" }}
         >
           {pillars.map((item, index) => {
             const Icon = item.IconComponent;
@@ -103,13 +120,6 @@ export default function WhyChooseUs() {
                 <p className="mt-4 leading-7 text-[var(--text)]">
                   {item.desc}
                 </p>
-
-                <div className="mt-8 flex items-center gap-2 font-semibold text-[var(--brand-orange)] cursor-pointer">
-                  <span>Learn More</span>
-                  <div className="transition-transform duration-300 group-hover:translate-x-2">
-                    <ArrowRightSquare size="24px" color="currentColor" />
-                  </div>
-                </div>
               </motion.div>
             );
           })}

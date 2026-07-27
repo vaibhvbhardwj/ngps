@@ -21,20 +21,20 @@ const processData = [
   { number: "5", title: "Master Carton Packing", desc: "Packed products are organized into master cartons.", Icon: Box },
   { number: "6", title: "Labelling", desc: "Barcode and shipment labels are applied accurately.", Icon: BuyMeACoffee },
   { number: "7", title: "Final Quality Check", desc: "Final inspection before dispatch to maintain zero-defect delivery.", Icon: CheckCircle },
-  { number: "8", title: "Dispatch Ready", desc: "Orders are prepared and handed over for nationwide delivery.", Icon: Send },
+  { number: "8", title: "Dispatch Ready", desc: "Completed orders are organized and prepared according to client requirements.", Icon: Send },
 ];
 
 // FIXED: Moved outside of the parent component to resolve ESLint error
 const RenderCard = ({ step }) => {
   const Icon = step.Icon;
   return (
-    <div className="relative flex items-center w-full min-h-[110px]">
+    <div className="group/process-card relative flex min-h-[110px] w-full items-center">
       {/* Large Overlapping Index Number */}
-      <div className="absolute left-[-20px] z-0 select-none font-black text-6xl sm:text-7xl text-slate-700/10 tracking-tighter">
+      <div className="absolute left-[-20px] z-0 select-none text-6xl font-black tracking-tighter text-slate-300/70 transition-opacity duration-300 group-hover/process-card:opacity-0 sm:text-7xl">
         {step.number}
       </div>
-      {/* Transparent Glassmorphism Card */}
-      <div className="group relative z-10 w-full rounded-2xl border border-slate-200/80 bg-white/40 backdrop-blur-md p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[var(--brand-blue)] hover:bg-white/95 hover:shadow-xl">
+      {/* Transparent by default; the surface appears on hover and covers the number. */}
+      <div className="group relative z-10 w-full rounded-2xl border border-transparent bg-transparent p-5 shadow-none transition-all duration-300 group-hover/process-card:-translate-y-1 group-hover/process-card:border-[var(--brand-blue)] group-hover/process-card:bg-white group-hover/process-card:shadow-xl">
         <div className="absolute left-4 top-0 h-[3px] w-12 rounded-b bg-gradient-to-r from-[var(--brand-blue)] to-[var(--brand-orange)]"></div>
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-bg)] text-[var(--brand-blue)] transition group-hover:bg-[var(--brand-blue)] group-hover:text-white">
@@ -74,7 +74,7 @@ export default function ProcessSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-white py-24">
+    <section className="relative overflow-hidden bg-white py-12 md:py-16">
       <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-[var(--accent-bg)] blur-3xl"></div>
       <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[rgba(241,90,36,.05)] blur-3xl"></div>
 
@@ -86,7 +86,7 @@ export default function ProcessSection() {
   className="w-full text-left mb-16"
   initial={{ opacity: 0, x: -20 }}
   whileInView={{ opacity: 1, x: 0 }}
-  viewport={{ once: true }}
+  viewport={{ once: false, amount: 0.3 }}
   transition={{ duration: 0.6 }}
 >
   <span className="block text-sm font-semibold uppercase tracking-wider text-[var(--brand-orange)]">
@@ -106,7 +106,7 @@ export default function ProcessSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: false, margin: "-60px" }}
           className="hidden md:block"
         >
           {/* Top Row: 1 -> 2 -> 3 -> 4 */}
@@ -148,7 +148,7 @@ export default function ProcessSection() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
+          viewport={{ once: false, margin: "-60px" }}
           className="block md:hidden space-y-12"
         >
           {/* Row 1: 1 -> 2 */}
