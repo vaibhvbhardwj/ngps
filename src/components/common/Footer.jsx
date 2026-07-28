@@ -7,11 +7,8 @@ import {
   Envelope,
   Location,
   Linkedin,
-  FacebookSquare,
   Instagram,
 } from "@boxicons/react";
-
-// social links needed to be added
 
 export default function Footer() {
   return (
@@ -40,7 +37,7 @@ export default function Footer() {
 
             <p className="mt-6 leading-8 text-slate-300">
               Delivering reliable Packaging,
-              EMS, ESD Solutions
+              EMS, OEM Solutions
               and Returns Management solutions
               with quality, precision and timely execution.
             </p>
@@ -48,21 +45,20 @@ export default function Footer() {
             <div className="mt-8 flex gap-4">
 
               <a
-                href="#"
+                href="https://www.linkedin.com/company/ngps-multitech-private-limited/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="NGPS Multitech on LinkedIn"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur transition-all duration-300 hover:scale-110 hover:border-[var(--brand-orange)] hover:bg-[var(--brand-orange)]"
               >
                 <Linkedin size="22px" />
               </a>
 
               <a
-                href="#"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur transition-all duration-300 hover:scale-110 hover:border-[var(--brand-orange)] hover:bg-[var(--brand-orange)]"
-              >
-                <FacebookSquare size="22px" />
-              </a>
-
-              <a
-                href="#"
+                href="https://www.instagram.com/ngps_multitech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="NGPS Multitech on Instagram"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur transition-all duration-300 hover:scale-110 hover:border-[var(--brand-orange)] hover:bg-[var(--brand-orange)]"
               >
                 <Instagram size="22px" />
@@ -146,10 +142,10 @@ export default function Footer() {
               </Link>
 
               <Link
-                to="/service#esd"
+                to="/service#oem"
                 className="transition-all duration-300 hover:translate-x-1 hover:text-[var(--brand-orange)]"
               >
-                ESD Solutions
+                OEM Solutions
               </Link>
 
             </div>
@@ -276,7 +272,7 @@ export default function Footer() {
 
           <span>•</span>
 
-          <span>EMS & ESD Solutions</span>
+          <span>EMS & OEM Solutions</span>
 
           <span>•</span>
 

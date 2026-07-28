@@ -35,7 +35,7 @@ export default function Service() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-400">Support & Services</span>
             </h1>
             <p className="text-slate-500 text-lg mb-8 max-w-xl">
-              From bulk packaging and structured return management to EMS, ESD, and customized value-added services for electronics businesses.
+              From bulk packaging and structured return management to EMS, OEM, and customized value-added services for electronics businesses.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/quote" className="bg-orange-500 hover:bg-orange-600 text-white font-medium px-6 py-3 rounded-lg transition-colors">Request a Quote</Link>
@@ -107,12 +107,12 @@ export default function Service() {
       <Shield />
     </div>
     <h3 className="mb-2 text-xl font-semibold text-slate-900 transition-colors group-hover:text-blue-600">
-      ESD Solutions
+      OEM Solutions
     </h3>
     <p className="mb-4 text-sm text-slate-600">
-      Product-sensitive handling support shaped around electronics, process, and quality requirements.
+      Product development and manufacturing support aligned with brand specifications, quality standards, and production requirements.
     </p>
-    <a href="#esd" className="flex items-center gap-1 text-sm font-medium text-blue-600 transition-colors group-hover:text-orange-500">
+    <a href="#oem" className="flex items-center gap-1 text-sm font-medium text-blue-600 transition-colors group-hover:text-orange-500">
       Learn More &rarr;
     </a>
   </div>
@@ -147,7 +147,7 @@ export default function Service() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-12">
             <div className="inline-flex bg-orange-50 text-orange-600 font-semibold text-xs uppercase px-3 py-1 rounded-full mb-3">Service Focus 02</div>
-            <h2 className="text-3xl font-bold text-slate-900">Smart Reverse Logistics & Returns Management</h2>
+            <h2 className="text-3xl font-bold text-slate-900">Returns Management</h2>
             <p className="text-slate-600 mt-2 max-w-xl">Convert returns into revenue. We efficiently manage the lifecycle of post-purchase products with transparent operations.</p>
           </div>
 
@@ -205,28 +205,28 @@ export default function Service() {
         </div>
       </section>
 
-      {/* ESD Section */}
-      <section id="esd" className="scroll-mt-24 border-y border-slate-100 bg-slate-50 px-6 py-12 md:py-16">
+      {/* OEM Section */}
+      <section id="oem" className="scroll-mt-24 border-y border-slate-100 bg-slate-50 px-6 py-12 md:py-16">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7">
             <div className="inline-flex rounded-full bg-orange-50 px-3 py-1 text-xs font-semibold uppercase text-orange-600">
               Service Focus 04
             </div>
             <h2 className="mt-4 text-3xl font-bold text-slate-900">
-              ESD Solutions for Electronics Operations
+              Original Equipment Manufacturer (OEM) Solutions
             </h2>
             <p className="mt-4 max-w-3xl leading-7 text-slate-600">
-              Electrostatic-sensitive products require handling processes suited to the product,
-              operating environment, and quality expectations. NGPS discusses the required scope
-              with each client and structures practical ESD support around their defined workflow.
+              NGPS supports businesses with OEM solutions shaped around their product specifications,
+              production requirements, and quality expectations. We work with each client to define
+              a practical manufacturing workflow that supports their brand and operational goals.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
             {[
-              'Requirement-based planning',
-              'Careful electronics handling',
-              'Process and quality alignment',
+              'Specification-led planning',
+              'Brand-focused manufacturing',
+              'Production and quality alignment',
             ].map((item) => (
               <div
                 key={item}
@@ -310,7 +310,7 @@ export default function Service() {
           Can NGPS combine multiple services into one workflow?
         </h4>
         <p className="text-sm text-slate-600 leading-relaxed">
-          Yes. Depending on the requirement, services such as Return Management, inspection, repackaging, Bulk Packaging, EMS, ESD Solutions, and other value-added activities can be structured as a coordinated workflow.
+          Yes. Depending on the requirement, services such as Return Management, inspection, repackaging, Bulk Packaging, EMS, OEM Solutions, and other value-added activities can be structured as a coordinated workflow.
         </p>
       </div>
 
@@ -327,10 +327,10 @@ export default function Service() {
       {/* FAQ Item 8 */}
       <div className="bg-slate-50 p-6 rounded-xl border border-slate-200">
         <h4 className="font-semibold text-base mb-2 flex justify-between items-center text-blue-600">
-          Do you provide ESD Solutions for sensitive electronics?
+          Do you provide OEM Solutions for electronics brands?
         </h4>
         <p className="text-sm text-slate-600 leading-relaxed">
-          Yes. ESD Solutions are part of our electronics service capabilities. The recommended scope is discussed according to the product, handling environment, process requirements, and the client's quality expectations.
+          Yes. Our OEM Solutions are planned around the client's product specifications, production volumes, process requirements, brand requirements, and quality expectations.
         </p>
       </div>
 

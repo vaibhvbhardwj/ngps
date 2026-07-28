@@ -25,7 +25,7 @@ export default function Hero() {
       icon: Chip,
     },
     {
-      title: "ESD Solutions",
+      title: "OEM Solutions",
       subtitle: "Safe Product Handling",
       icon: Building,
     },
@@ -74,7 +74,7 @@ export default function Hero() {
           {/* Description */}
           <p className="mt-4 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
             Your trusted partner for electronics Assembly,
-            bulk packaging, return management and ESD solutions.
+            bulk packaging, return management and OEM solutions.
             We help brands streamline manufacturing support,
             packaging and Return Management with reliability and precision.
           </p>

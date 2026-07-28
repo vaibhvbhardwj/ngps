@@ -116,7 +116,7 @@ export default function Quote() {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 md:text-lg">
             Share your operational requirements and our team will prepare a solution for packaging,
-            return management, EMS, ESD, or other value-added support.
+            return management, EMS, OEM, or other value-added support.
           </p>
         </motion.div>
       </section>
@@ -256,7 +256,7 @@ export default function Quote() {
                       <option>Bulk Packaging</option>
                       <option>Returns Management</option>
                       <option>EMS Services</option>
-                      <option>ESD Solutions</option>
+                      <option>OEM Solutions</option>
                       <option>Multiple Services</option>
                     </select>
                   </label>

@@ -12,7 +12,7 @@ const terms = [
         </p>
         <p>
           The website provides general information about our electronics industry services,
-          including EMS, Return Management, Bulk Packaging, ESD Solutions, and value-added
+          including EMS, Return Management, Bulk Packaging, OEM Solutions, and value-added
           services.
         </p>
       </>

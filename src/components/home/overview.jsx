@@ -17,7 +17,7 @@ export default function CompanyOverview() {
             Support That Builds Trust
           </p>
           <p className="mt-4 text-slate-600 leading-relaxed max-w-xl">
-            NGPS Multitech Private Limited is a trusted electronics solutions company committed to delivering reliable, efficient, and quality-driven services to businesses across the electronics industry. With a strong focus on operational excellence and customer satisfaction, we provide comprehensive solutions including Electronics Manufacturing Services (EMS), Return Management, Bulk Packaging, ESD Solutions, and other value-added services tailored to specific business requirements.
+            NGPS Multitech Private Limited is a trusted electronics solutions company committed to delivering reliable, efficient, and quality-driven services to businesses across the electronics industry. With a strong focus on operational excellence and customer satisfaction, we provide comprehensive solutions including Electronics Manufacturing Services (EMS), Return Management, Bulk Packaging, Original Equipment Manufacturer (OEM) Solutions, and other value-added services tailored to specific business requirements.
           </p>
 
           {/* Quick Stats Grid */}

@@ -163,8 +163,8 @@ export default function Contact() {
                     <option value="Bulk Packaging">Bulk Packaging Solutions</option>
                     <option value="Returns Management">Returns & Reverse Logistics</option>
                     <option value="EMS Services">Electronics Manufacturing Services</option>
-                    <option value="ESD Solutions">ESD Solutions</option>
-                    <option value="General Inquiry">General Partnership Queries</option>
+                    <option value="OEM Solutions">OEM Solutions</option>
+                    <option value="General Inquiry">General Queries</option>
                   </select>
                 </div>
               </div>
